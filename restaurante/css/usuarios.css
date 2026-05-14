@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #001f4d, #003b8f, #00a2ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+center{
+    width: 100%;
+}
+
+form,
+.contenedor{
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.15);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+}
+
+.label{
+    color: white !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.input,
+.select select{
+    background: rgba(255,255,255,0.08) !important;
+    border: 2px solid rgba(255,255,255,0.15) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 12px !important;
+    transition: 0.3s;
+}
+
+.input::placeholder{
+    color: #d9ecff;
+}
+
+.input:focus,
+.select select:focus{
+    border-color: #00bfff !important;
+    box-shadow: 0 0 15px rgba(0,191,255,0.6) !important;
+}
+
+.select select option{
+    color: black;
+}
+
+.radio{
+    color: white !important;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.field{
+    margin-bottom: 20px;
+}
+
+.button.is-link{
+    background: linear-gradient(90deg, #00bfff, #005eff) !important;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 25px;
+    transition: 0.3s;
+}
+
+.button.is-link:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,191,255,0.7);
+}
+
+.button.is-light{
+    background: rgba(255,255,255,0.15) !important;
+    color: white !important;
+    border-radius: 12px;
+}
+
+.field.is-grouped{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+@media(max-width: 768px){
+
+    body{
+        padding: 15px;
+    }
+
+    form,
+    .contenedor{
+        padding: 25px;
+    }
+
+    .field.is-grouped{
+        flex-direction: column;
+    }
+
+    .button{
+        width: 100%;
+    }
+
+    .boton-volver{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: linear-gradient(135deg, #00c3ff, #0077ff);
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 22px;
+    border-radius: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    border: 2px solid rgba(255,255,255,0.3);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+
+    z-index: 999;
+}
+
+
+}
+
+.boton-volver{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: linear-gradient(135deg, #00c3ff, #0077ff);
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 22px;
+    border-radius: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    border: 2px solid rgba(255,255,255,0.3);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+
+    z-index: 999;
+}
+
+.boton-volver:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    background: linear-gradient(135deg, #009dff, #005eff);
+}
+
+@media screen and (max-width: 768px){
+
+    .boton-volver{
+        top: 15px;
+        right: 15px;
+
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}

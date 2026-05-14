@@ -1,123 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USUARIOS</title>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 
 <body>
-    <center>
-        <div class="field">
-            <label class="label">NOMBRE</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Ingrese su nombre">
+ <a href="../index.html" class="boton-volver">
+    ⬅ Volver al Inicio
+</a>
+
+    <div class="contenedor">
+
+        <form>
+
+            <div class="field">
+                <label class="label">NOMBRE</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ingrese su nombre">
+                </div>
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">APELLIDO</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Ingrese su apellido">
+            <div class="field">
+                <label class="label">APELLIDO</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ingrese su apellido">
+                </div>
             </div>
-        </div>
 
-        <div class="control">
-            <label class="label">DOCUMENTO</label>
-            <div class="select">
-                <select>
-                    <option>SELECCIONE SU TIPO DE DOCUMENTO</option>
-                    <option>T.I</option>
-                    <option>C.C</option>
-                    <option>C.E</option>
-                </select>
+            <div class="field">
+                <label class="label">DOCUMENTO</label>
+
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select>
+                            <option>SELECCIONE SU TIPO DE DOCUMENTO</option>
+                            <option>T.I</option>
+                            <option>C.C</option>
+                            <option>C.E</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">NUMERO DE DOCUMENTO</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+            <div class="field">
+                <label class="label">NUMERO DE DOCUMENTO</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ingrese su documento">
+                </div>
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">TELEFONO</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+            <div class="field">
+                <label class="label">TELEFONO</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ingrese su teléfono">
+                </div>
             </div>
-        </div>
 
+            <div class="field">
+                <label class="label">GENERO</label>
 
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="genero">
+                        Femenino
+                    </label>
 
-
-        <div class="field is-horizontal">
-            <div class="field-label">
-                <label class="label"> GENERO </label>
+                    <label class="radio">
+                        <input type="radio" name="genero">
+                        Masculino
+                    </label>
+                </div>
             </div>
-            <div class="field-body">
-                <div class="field is-narrow">
-                    <div class="control">
-                        <label class="radio">
-                            <input type="radio" name="member">
-                            Femenino
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="member">
-                            Masculino
 
-                            <div class="field">
-                                <label class="label">CARGO</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Text input">
-                                </div>
-                            </div>
+            <div class="field">
+                <label class="label">CARGO</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ingrese su cargo">
+                </div>
+            </div>
 
-                            <div class="field">
-                                <label class="label">FECHA DE NACIMIENTO</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Text input">
-                                </div>
-                            </div>
+            <div class="field">
+                <label class="label">FECHA DE NACIMIENTO</label>
+                <div class="control">
+                    <input class="input" type="date">
+                </div>
+            </div>
 
-                            <div class="field">
-                                <label class="label">CORREO ELECTRONICO</label>
-                                <p class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Ingrese su correo">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="field">
-                                <label class="label">CONTRASEÑA</label>
-                                <p class="control has-icons-left">
-                                    <input class="input" type="password" placeholder="Ingrese su contraseña">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="field">
-                                <p class="control">
-                                </p>
-                            </div>
+            <div class="field">
+                <label class="label">CORREO ELECTRONICO</label>
 
+                <div class="control">
+                    <input class="input" type="email" placeholder="Ingrese su correo">
+                </div>
+            </div>
 
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <button class="button is-link">Submit</button>
-                                </div>
-                                <div class="control">
-                                    <button class="button is-link is-light">Cancel</button>
-                                </div>
-                            </div>
-    </center>
+            <div class="field">
+                <label class="label">CONTRASEÑA</label>
+
+                <div class="control">
+                    <input class="input" type="password" placeholder="Ingrese su contraseña">
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" type="submit">
+                        Registrar
+                    </button>
+                </div>
+
+                <div class="control">
+                    <button class="button is-link is-light" type="reset">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
 </body>
 
 </html>
