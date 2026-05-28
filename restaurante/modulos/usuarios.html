@@ -11,6 +11,9 @@
 </head>
 
 <body>
+
+<script src="../js/usuarios.js"></script>
+
  <a href="../index.html" class="boton-volver">
     ⬅ Volver al Inicio
 </a>
@@ -22,14 +25,14 @@
             <div class="field">
                 <label class="label">NOMBRE</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese su nombre">
+                    <input id="nombre" class="input" type="text" placeholder="Ingrese su nombre">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">APELLIDO</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese su apellido">
+                    <input id="apellido" class="input" type="text" placeholder="Ingrese su apellido">
                 </div>
             </div>
 
@@ -38,7 +41,7 @@
 
                 <div class="control">
                     <div class="select is-fullwidth">
-                        <select>
+                        <select id="documento">
                             <option>SELECCIONE SU TIPO DE DOCUMENTO</option>
                             <option>T.I</option>
                             <option>C.C</option>
@@ -51,14 +54,14 @@
             <div class="field">
                 <label class="label">NUMERO DE DOCUMENTO</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese su documento">
+                    <input id="numero_documento" class="input" type="text" placeholder="Ingrese su documento">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">TELEFONO</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese su teléfono">
+                    <input id="telefono" class="input" type="text" placeholder="Ingrese su teléfono">
                 </div>
             </div>
 
@@ -72,7 +75,7 @@
                     </label>
 
                     <label class="radio">
-                        <input type="radio" name="genero">
+                        <input id="genero" type="radio" name="genero">
                         Masculino
                     </label>
                 </div>
@@ -81,14 +84,14 @@
             <div class="field">
                 <label class="label">CARGO</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese su cargo">
+                    <input id="cargo" class="input" type="text" placeholder="Ingrese su cargo">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">FECHA DE NACIMIENTO</label>
                 <div class="control">
-                    <input class="input" type="date">
+                    <input id="fecha_nacimiento" class="input" type="date">
                 </div>
             </div>
 
@@ -96,7 +99,7 @@
                 <label class="label">CORREO ELECTRONICO</label>
 
                 <div class="control">
-                    <input class="input" type="email" placeholder="Ingrese su correo">
+                    <input id="correo" class="input" type="email" placeholder="Ingrese su correo">
                 </div>
             </div>
 
@@ -104,7 +107,7 @@
                 <label class="label">CONTRASEÑA</label>
 
                 <div class="control">
-                    <input class="input" type="password" placeholder="Ingrese su contraseña">
+                    <input id="contraseña" class="input" type="password" placeholder="Ingrese su contraseña">
                 </div>
             </div>
 

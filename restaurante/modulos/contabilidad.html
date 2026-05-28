@@ -11,6 +11,9 @@
 </head>
 
 <body>
+
+    <script src="../js/contabilidad.js"></script>
+
  <a href="../index.html" class="boton-volver">
     ⬅ Volver al Inicio
 </a>
@@ -45,35 +48,35 @@
 
                     <div class="campo">
                         <label>Fecha</label>
-                        <input type="date">
+                        <input id="fecha" type="date">
                     </div>
 
                     <div class="campo">
                         <label>Concepto</label>
-                        <input type="text" placeholder="Ingrese el concepto">
+                        <input id="concepto" type="text" placeholder="Ingrese el concepto">
                     </div>
 
                     <div class="campo">
                         <label>Valor</label>
-                        <input type="number" placeholder="Ingrese el valor">
+                        <input id="valor" type="number" placeholder="Ingrese el valor">
                     </div>
 
                     <div class="campo">
                         <label>Ingresos</label>
-                        <input type="number" placeholder="Ingrese ingresos">
+                        <input id="ingresos" type="number" placeholder="Ingrese ingresos">
                     </div>
 
                     <div class="campo">
                         <label>Egresos</label>
-                        <input type="number" placeholder="Ingrese egresos">
+                        <input id="egresos" type="number" placeholder="Ingrese egresos">
                     </div>
 
                     <div class="campo">
                         <label>Tipo de movimiento</label>
 
-                        <select>
+                        <select id="categoria">
                             <option>Seleccione una opción</option>
-                            <option>Ingreso</option>
+                            <option>Ingreso</option> 
                             <option>Egreso</option>
                         </select>
                     </div>

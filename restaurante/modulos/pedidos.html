@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/pedidos.css">
 </head>
 <body>
+
+<script src="../js/pedidos.js"></script>
+
     <a href="../index.html" class="boton-volver">
     ⬅ Volver al Inicio
 </a>
@@ -23,33 +26,33 @@
 
                 <div class="campo">
                     <label>Nombre de usuario</label>
-                    <input type="text" placeholder="Ingresa tu nombre">
+                    <input id="nombre" type="text" placeholder="Ingresa tu nombre">
                 </div>
 
                 <div class="campo">
                     <label>Producto</label>
-                    <input type="text" placeholder="¿Qué deseas pedir?">
+                    <input id="producto" type="text" placeholder="¿Qué deseas pedir?">
                 </div>
 
                 <div class="campo">
                     <label>Cantidad</label>
-                    <input type="number" placeholder="Cantidad">
+                    <input id="cantidad" type="number" placeholder="Cantidad">
                 </div>
 
                 <div class="campo">
                     <label>Dirección</label>
-                    <input type="text" placeholder="Ingresa tu dirección">
+                    <input id="direccion" type="text" placeholder="Ingresa tu dirección">
                 </div>
 
                 <div class="campo">
                     <label>Teléfono</label>
-                    <input type="tel" placeholder="Número de teléfono">
+                    <input id="telefono" type="tel" placeholder="Número de teléfono">
                 </div>
 
                 <div class="campo">
                     <label>Método de pago</label>
 
-                    <select>
+                    <select id="pago"> 
                         <option>Efectivo</option>
                         <option>Tarjeta</option>
                         <option>Nequi</option>
