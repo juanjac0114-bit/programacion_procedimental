@@ -1,3 +1,4 @@
+console.log("hola beiby")
 let nombre  = document.getElementsByName("nombre").Value;
 let apellido  = document.getElementsByName("apellido").Value;
 let documento = document.getElementById("documento").Value;
@@ -23,7 +24,7 @@ function ValidarDatos(){
         if( numero_documento.length() ==10){
             console.log("los datos son incorrectos")
         }
-        if( telefono.length() ==10){
+        if( telefono.length() > 10 || telefono==/[a-zA_Z]/){
             console.log("los datos son incorrectos")
         }
         if(correo != /[@]/){
