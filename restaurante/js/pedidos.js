@@ -5,7 +5,7 @@ let direccion = document.getElementById("direccion").value;
 let telefono = document.getElementById("telefono").value;
 let pago = document.getElementById("pago").value;
 
-
+function validarDatos(){
 if (nombre.trim() === "") {
     alert("Ingrese su nombre");
     return;
@@ -42,4 +42,6 @@ if (pago === "") {
     return;
 }
 
-alert("Datos validados correctamente.");
+alert("Datos validados correctamente.");}
+
+document.getElementById("btnguardar").onclick = validarDatos;
