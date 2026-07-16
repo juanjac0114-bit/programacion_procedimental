@@ -1,4 +1,4 @@
-console.log("hola beiby")
+function ValidarDatos(){
 let nombre  = document.getElementsByName("nombre").Value;
 let apellido  = document.getElementsByName("apellido").Value;
 let documento = document.getElementById("documento").Value;
@@ -10,26 +10,75 @@ let fecha_nacimiento = document.getElementById("fecha_nacimiento").Value;
 let correo = document.getElementById("correo").Value;
 let contraseña = document.getElementById("contraseña").Value;
 
-function ValidarDatos(){
-    if(nombre == '' || apellido == '' || numero_documento =='' || telefono== '' || correo == '' ){
-        console.log("los campos estan vacios")
-    }
-    else{
-        if( nombre != /[a-zA_Z]/){
-            console.log('Los datos son incorrectos')
-        }
-        if( apellido != /[a-zA_Z]/){
-            console.log("los datos son incorrectos")
-        }
-        if( numero_documento.length() ==10){
-            console.log("los datos son incorrectos")
-        }
-        if( telefono.length() > 10 || telefono==/[a-zA_Z]/){
-            console.log("los datos son incorrectos")
-        }
-        if(correo != /[@]/){
-            console.log("los datos son incorrectos")
-        }
-    }
+
+    if (
+    nombre === "" ||
+    apellido === "" ||
+    numero_documento === "" ||
+    telefono === "" ||
+    correo === ""
+) {
+    Swal.fire({
+  title: "¿RELLENASTE LOS CAMPOS?",
+  text: "Rellena los campos por favor",
+  icon: "question"
+});
+} else {
+
     
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
+       Swal.fire({
+  title: "EL NOMBRE ES INVALIDO",
+  text: "Por favor escribe el nombre con caracteres validos",
+  icon: "question"
+});
+    }
+
+  
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(apellido)) {
+       Swal.fire({
+  title: "EL APELLIDO ES INVALIDO",
+  text: "por favor escribe el apellido con caracteres validos",
+  icon: "question"
+});
+    }
+
+  
+    if (numero_documento.length !== 10 || isNaN(numero_documento)) {
+        Swal.fire({
+  title: "¿ESTO ES UN NUMERO DE DOCUMENTO?",
+  text: "El numero de documento solo debe tener 10 digitos",
+  icon: "question"
+});
+    }
+
+    if (
+        telefono.length !== 10 ||
+        !/^\d+$/.test(telefono)
+    ) {
+      Swal.fire({
+  title: "TELEFONO INVALIDO",
+  text: "El numero de telefono debe tener 10 digitos",
+  icon: "question"
+});
+    }
+
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+       Swal.fire({
+  title: "CORREO INVALIDO",
+  text: "El correo debe tener un @",
+  icon: "question"
+});
+    }
 }
+
+Swal.fire({
+        title: "EXCELENTE, TU PEDIDO SALDRA PRONTO",
+        icon: "success",
+        draggable: true,
+        timer: undefined
+    });
+}
+
+document.getElementById("btguardar").onclick = validarDatos;
