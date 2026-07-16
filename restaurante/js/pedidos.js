@@ -7,27 +7,47 @@ let pago = document.getElementById("pago").value;
 
 function validarDatos(){
 if (nombre.trim() === "") {
-    alert("Ingrese su nombre");
+    Swal.fire({
+  title: "¿A QUIEN LE LLEGARA EL DOMICILIO?",
+  text: "Debe ingresar su nombre",
+  icon: "question"
+});;
     return;
 }
 
 if (producto.trim() === "") {
-    alert("Ingrese el producto");
+    Swal.fire({
+  title: "¿QUE PRODUCTO QUIERES LLEVAR?",
+  text: "Selecciona tu producto",
+  icon: "question"
+});
     return;
 }
 
 if (cantidad === "" || cantidad <= 0) {
-    alert("Ingrese una cantidad válida");
+   Swal.fire({
+  title: "¿CUANTOS DESEAS?",
+  text: "selecciona la cantidad",
+  icon: "question"
+});
     return;
 }
 
 if (direccion.trim() === "") {
-    alert("Ingrese la dirección");
+   Swal.fire({
+  title: "¿A DONDE LLEGARÁ EL PRODUCTO?",
+  text: "Indica la dirección",
+  icon: "question"
+});
     return;
 }
 
 if (telefono.trim() === "") {
-    alert("Ingrese el teléfono");
+    Swal.fire({
+  title: "¿A DONDE LLAMAREMOS?",
+  text: "That thing is still around?",
+  icon: "question"
+});
     return;
 }
 

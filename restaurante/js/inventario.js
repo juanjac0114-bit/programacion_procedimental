@@ -14,7 +14,7 @@ if (
     return;
 }
 
-// Validar que código y cantidad sean números
+
 if (isNaN(codigo_producto)) {
     alert("El código del producto debe ser numérico");
     return;
@@ -25,7 +25,7 @@ if (isNaN(cantidad)) {
     return;
 }
 
-// Validar que nombre y marca solo contengan letras
+
 let soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
 if (!soloLetras.test(nombre_producto)) {

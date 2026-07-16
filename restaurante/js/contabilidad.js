@@ -18,7 +18,6 @@ if (
     return;
 }
 
-// Validar que valor, ingresos y egresos sean números
 if (isNaN(valor)) {
     alert("El campo Valor no puede contener letras");
     return;
