@@ -1,10 +1,12 @@
-function ValidarDatos() {
-    let codigo_producto = document.getElementById("codigo_producto").Value;
-    let nombre_producto = document.getElementsByName("nombre_producto").Value;
-    let cantidad = document.getElementById("cantidad").Value;
-    let marca = document.getElementsByName("marca").Value;
+function ValidarDatos(event) {
+    event.preventDefault();
 
+    let codigo_producto = document.getElementById("codigo_producto").value.trim();
+    let nombre_producto = document.getElementById("nombre_producto").value.trim();
+    let cantidad = document.getElementById("cantidad").value.trim();
+    let marca = document.getElementById("marca").value.trim();
 
+    
     if (
         codigo_producto === "" ||
         nombre_producto === "" ||
@@ -12,29 +14,30 @@ function ValidarDatos() {
         marca === ""
     ) {
         Swal.fire({
-  title: "¿RELLENASTE TODOS LOS CAMPOS?",
-  text: "todos los campos deben estar completos",
-  icon: "question"
-});
+            title: "¿RELLENASTE TODOS LOS CAMPOS?",
+            text: "Todos los campos deben estar completos.",
+            icon: "warning"
+        });
         return;
     }
 
-
+    
     if (isNaN(codigo_producto)) {
         Swal.fire({
-  title: "¿USASTE SOLO NUMEROS?",
-  text: "El codigo del producto debe ser numerico",
-  icon: "question"
-});
+            title: "CÓDIGO INVÁLIDO",
+            text: "El código del producto debe contener solo números.",
+            icon: "error"
+        });
         return;
     }
 
+
     if (isNaN(cantidad)) {
-       Swal.fire({
-  title: "¿CUAL ES LA CANTIDAD?",
-  text: "La cantidad debe ser numerica",
-  icon: "question"
-});
+        Swal.fire({
+            title: "CANTIDAD INVÁLIDA",
+            text: "La cantidad debe contener solo números.",
+            icon: "error"
+        });
         return;
     }
 
@@ -42,30 +45,31 @@ function ValidarDatos() {
     let soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
     if (!soloLetras.test(nombre_producto)) {
-       Swal.fire({
-  title: "NOMBRE INVALIDO",
-  text: "El nombre del producto debe contener solo letras",
-  icon: "question"
-});
+        Swal.fire({
+            title: "NOMBRE INVÁLIDO",
+            text: "El nombre del producto solo debe contener letras.",
+            icon: "error"
+        });
         return;
     }
 
     if (!soloLetras.test(marca)) {
-       Swal.fire({
-  title: "CARACTERES INVALIDOS",
-  text: "La marca slo debe contener letras",
-  icon: "question"
-});
+        Swal.fire({
+            title: "MARCA INVÁLIDA",
+            text: "La marca solo debe contener letras.",
+            icon: "error"
+        });
         return;
     }
 
+    
     Swal.fire({
-        title: "EXCELENTE,",
-        icon: "success",
-        draggable: true,
-        timer: undefined
+        title: "¡EXCELENTE!",
+        text: "Los datos fueron validados correctamente.",
+        icon: "success"
     });
 }
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("guarda".addEventListener("click", ValidarDatos));
-})
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("guarda").addEventListener("click", ValidarDatos);
+});

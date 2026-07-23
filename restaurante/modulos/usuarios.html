@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,124 +11,113 @@
 
 <body>
 
-
-
- <a href="../index.html" class="boton-volver">
+<a href="../index.html" class="boton-volver">
     ⬅ Volver al Inicio
 </a>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <form>
+<form id="formulario">
 
-            <div class="field">
-                <label class="label">NOMBRE</label>
-                <div class="control">
-                    <input id="nombre" class="input" type="text" placeholder="Ingrese su nombre">
-                </div>
+    <div class="field">
+        <label class="label">NOMBRE</label>
+        <div class="control">
+            <input id="nombre" class="input" type="text">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">APELLIDO</label>
+        <div class="control">
+            <input id="apellido" class="input" type="text">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">DOCUMENTO</label>
+        <div class="control">
+            <div class="select is-fullwidth">
+                <select id="documento">
+                    <option value="">SELECCIONE SU TIPO DE DOCUMENTO</option>
+                    <option>T.I</option>
+                    <option>C.C</option>
+                    <option>C.E</option>
+                </select>
             </div>
+        </div>
+    </div>
 
-            <div class="field">
-                <label class="label">APELLIDO</label>
-                <div class="control">
-                    <input id="apellido" class="input" type="text" placeholder="Ingrese su apellido">
-                </div>
-            </div>
+    <div class="field">
+        <label class="label">NUMERO DE DOCUMENTO</label>
+        <div class="control">
+            <input id="numero_documento" class="input" type="text">
+        </div>
+    </div>
 
-            <div class="field">
-                <label class="label">DOCUMENTO</label>
+    <div class="field">
+        <label class="label">TELEFONO</label>
+        <div class="control">
+            <input id="telefono" class="input" type="text">
+        </div>
+    </div>
 
-                <div class="control">
-                    <div class="select is-fullwidth">
-                        <select id="documento">
-                            <option>SELECCIONE SU TIPO DE DOCUMENTO</option>
-                            <option>T.I</option>
-                            <option>C.C</option>
-                            <option>C.E</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+    <div class="field">
+        <label class="label">GENERO</label>
 
-            <div class="field">
-                <label class="label">NUMERO DE DOCUMENTO</label>
-                <div class="control">
-                    <input id="numero_documento" class="input" type="text" placeholder="Ingrese su documento">
-                </div>
-            </div>
+        <label class="radio">
+            <input type="radio" name="genero" value="F">
+            Femenino
+        </label>
 
-            <div class="field">
-                <label class="label">TELEFONO</label>
-                <div class="control">
-                    <input id="telefono" class="input" type="text" placeholder="Ingrese su teléfono">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">GENERO</label>
-
-                <div class="control">
-                    <label class="radio">
-                        <input type="radio" name="genero">
-                        Femenino
-                    </label>
-
-                    <label class="radio">
-                        <input id="genero" type="radio" name="genero">
-                        Masculino
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">CARGO</label>
-                <div class="control">
-                    <input id="cargo" class="input" type="text" placeholder="Ingrese su cargo">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">FECHA DE NACIMIENTO</label>
-                <div class="control">
-                    <input id="fecha_nacimiento" class="input" type="date">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">CORREO ELECTRONICO</label>
-
-                <div class="control">
-                    <input id="correo" class="input" type="email" placeholder="Ingrese su correo">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">CONTRASEÑA</label>
-
-                <div class="control">
-                    <input id="contraseña" class="input" type="password" placeholder="Ingrese su contraseña">
-                </div>
-            </div>
-
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link" type="submit">
-                        Registrar
-                    </button>
-                </div>
-
-                <div class="control">
-                    <button class="button is-link is-light" id=" btguardar" type="reset">
-                        Cancelar
-                    </button>
-                </div>
-            </div>
-
-        </form>
+        <label class="radio">
+            <input type="radio" name="genero" value="M">
+            Masculino
+        </label>
 
     </div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/usuarios.js"></script>
-</body>
 
+    <div class="field">
+        <label class="label">CARGO</label>
+        <div class="control">
+            <input id="cargo" class="input" type="text">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">FECHA DE NACIMIENTO</label>
+        <div class="control">
+            <input id="fecha_nacimiento" class="input" type="date">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">CORREO</label>
+        <div class="control">
+            <input id="correo" class="input" type="email">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">CONTRASEÑA</label>
+        <div class="control">
+            <input id="contraseña" class="input" type="password">
+        </div>
+    </div>
+
+    <button type="button" id="btguard" class="button is-link">
+        Registrar
+    </button>
+
+    <button type="reset" class="button is-light">
+        Cancelar
+    </button>
+
+</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/usuarios.js"></script>
+
+</body>
 </html>

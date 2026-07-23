@@ -1,84 +1,100 @@
-function validarDatos() {
-    let producto = document.getElementById("producto").value;
-    let cantidad = document.getElementById("cantidad").value;
-    let nombre = document.getElementById("nombre").value;
-    let direccion = document.getElementById("direccion").value;
-    let telefono = document.getElementById("telefono").value;
+function validarDatos(event) {
+    event.preventDefault();
+
+    let producto = document.getElementById("producto").value.trim();
+    let cantidad = document.getElementById("cantidad").value.trim();
+    let nombre = document.getElementById("nombre").value.trim();
+    let direccion = document.getElementById("direccion").value.trim();
+    let telefono = document.getElementById("telefono").value.trim();
     let pago = document.getElementById("pago").value;
 
-    console.log(nombre);
-    if (nombre.trim() === "") {
-        Swal.fire({
-            title: "¿A QUIEN LE LLEGARA EL DOMICILIO?",
-            text: "Debe ingresar su nombre",
-            icon: "question"
-        });;
-        return;
-    }
+    let soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
-    
-
-    if (producto.trim() === "") {
+    if (nombre === "") {
         Swal.fire({
-            title: "¿QUE PRODUCTO QUIERES LLEVAR?",
-            text: "Selecciona tu producto",
-            icon: "question"
+            title: "¿A QUIÉN LE LLEGARÁ EL DOMICILIO?",
+            text: "Debe ingresar su nombre.",
+            icon: "warning"
         });
         return;
     }
 
-    if (cantidad === "" || cantidad <= 0) {
+    if (!soloLetras.test(nombre)) {
         Swal.fire({
-            title: "¿CUANTOS DESEAS?",
-            text: "selecciona la cantidad",
-            icon: "question"
+            title: "NOMBRE INVÁLIDO",
+            text: "El nombre solo debe contener letras.",
+            icon: "error"
         });
         return;
     }
 
-    if (direccion.trim() === "") {
+ 
+    if (producto === "") {
         Swal.fire({
-            title: "¿A DONDE LLEGARÁ EL PRODUCTO?",
-            text: "Indica la dirección",
-            icon: "question"
+            title: "¿QUÉ PRODUCTO QUIERES LLEVAR?",
+            text: "Selecciona tu producto.",
+            icon: "warning"
         });
         return;
     }
 
-    if (telefono.trim() === "") {
+  
+    if (cantidad === "" || isNaN(cantidad) || Number(cantidad) <= 0) {
         Swal.fire({
-            title: "¿A DONDE LLAMAREMOS?",
-            text: "That thing is still around?",
-            icon: "question"
+            title: "¿CUÁNTOS DESEAS?",
+            text: "Ingrese una cantidad válida.",
+            icon: "warning"
         });
         return;
     }
 
-    // Validar teléfono (10 dígitos)
+
+    if (direccion === "") {
+        Swal.fire({
+            title: "¿A DÓNDE LLEGARÁ EL PRODUCTO?",
+            text: "Indica la dirección.",
+            icon: "warning"
+        });
+        return;
+    }
+
+   
+    if (telefono === "") {
+        Swal.fire({
+            title: "¿A DÓNDE LLAMAREMOS?",
+            text: "Debe ingresar su número de teléfono.",
+            icon: "warning"
+        });
+        return;
+    }
+
     if (!/^\d{10}$/.test(telefono)) {
         Swal.fire({
-            title: "NUMERO INVALIDO",
-            text: "Ingrese su numero de telefono",
-            icon: "question"
+            title: "NÚMERO INVÁLIDO",
+            text: "El teléfono debe tener exactamente 10 dígitos.",
+            icon: "error"
         });
         return;
     }
 
+    // Validar método de pago
     if (pago === "") {
         Swal.fire({
-            title: "¿COMO NOS VAS A PAGAR?",
-            text: "Selecciona tu metodo de pago",
-            icon: "question"
+            title: "¿CÓMO NOS VAS A PAGAR?",
+            text: "Selecciona tu método de pago.",
+            icon: "warning"
         });
         return;
     }
 
+    // Todo correcto
     Swal.fire({
-        title: "EXCELENTE, TU PEDIDO SALDRA PRONTO",
-        icon: "success",
-        draggable: true,
-        timer: undefined
+        title: "¡EXCELENTE!",
+        text: "Tu pedido saldrá pronto.",
+        icon: "success"
     });
 }
 
-document.getElementById("btnguardar").onclick = validarDatos;
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("btnguardar").addEventListener("click", validarDatos);
+});

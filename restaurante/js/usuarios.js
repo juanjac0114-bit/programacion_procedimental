@@ -1,84 +1,87 @@
-function ValidarDatos(){
-let nombre  = document.getElementsByName("nombre").Value;
-let apellido  = document.getElementsByName("apellido").Value;
-let documento = document.getElementById("documento").Value;
-let numero_documento  = document.getElementById("numero_documento").Value;
-let telefono  = document.getElementById("telefono").Value;
-let genero = document.querySelector('input[name="genero"]:checked').Value;
-let cargo  = document.getElementsByName("cargo").Value;
-let fecha_nacimiento = document.getElementById("fecha_nacimiento").Value;
-let correo = document.getElementById("correo").Value;
-let contraseña = document.getElementById("contraseña").Value;
+function ValidarDatos() {
 
-
-    if (
-    nombre === "" ||
-    apellido === "" ||
-    numero_documento === "" ||
-    telefono === "" ||
-    correo === ""
-) {
-    Swal.fire({
-  title: "¿RELLENASTE LOS CAMPOS?",
-  text: "Rellena los campos por favor",
-  icon: "question"
-});
-} else {
-
-    
-    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-       Swal.fire({
-  title: "EL NOMBRE ES INVALIDO",
-  text: "Por favor escribe el nombre con caracteres validos",
-  icon: "question"
-});
-    }
-
-  
-    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(apellido)) {
-       Swal.fire({
-  title: "EL APELLIDO ES INVALIDO",
-  text: "por favor escribe el apellido con caracteres validos",
-  icon: "question"
-});
-    }
-
-  
-    if (numero_documento.length !== 10 || isNaN(numero_documento)) {
-        Swal.fire({
-  title: "¿ESTO ES UN NUMERO DE DOCUMENTO?",
-  text: "El numero de documento solo debe tener 10 digitos",
-  icon: "question"
-});
-    }
+    let nombre = document.getElementById("nombre").value.trim();
+    let apellido = document.getElementById("apellido").value.trim();
+    let documento = document.getElementById("documento").value;
+    let numero_documento = document.getElementById("numero_documento").value.trim();
+    let telefono = document.getElementById("telefono").value.trim();
+    let genero = document.querySelector('input[name="genero"]:checked');
+    let cargo = document.getElementById("cargo").value.trim();
+    let fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
+    let correo = document.getElementById("correo").value.trim();
+    let contraseña = document.getElementById("contraseña").value.trim();
 
     if (
-        telefono.length !== 10 ||
-        !/^\d+$/.test(telefono)
+        nombre == "" ||
+        apellido == "" ||
+        documento == "" ||
+        numero_documento == "" ||
+        telefono == "" ||
+        genero == null ||
+        cargo == "" ||
+        fecha_nacimiento == "" ||
+        correo == "" ||
+        contraseña == ""
     ) {
-      Swal.fire({
-  title: "TELEFONO INVALIDO",
-  text: "El numero de telefono debe tener 10 digitos",
-  icon: "question"
-});
+        Swal.fire({
+            title: "¿RELLENASTE LOS CAMPOS?",
+            text: "Todos los campos son obligatorios.",
+            icon: "warning"
+        });
+        return;
     }
 
-    
+    if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre)) {
+        Swal.fire({
+            title: "NOMBRE INVÁLIDO",
+            text: "Solo letras.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(apellido)) {
+        Swal.fire({
+            title: "APELLIDO INVÁLIDO",
+            text: "Solo letras.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!/^\d{10}$/.test(numero_documento)) {
+        Swal.fire({
+            title: "DOCUMENTO INVÁLIDO",
+            text: "Debe tener 10 números.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!/^\d{10}$/.test(telefono)) {
+        Swal.fire({
+            title: "TELÉFONO INVÁLIDO",
+            text: "Debe tener 10 números.",
+            icon: "error"
+        });
+        return;
+    }
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-       Swal.fire({
-  title: "CORREO INVALIDO",
-  text: "El correo debe tener un @",
-  icon: "question"
-});
+        Swal.fire({
+            title: "CORREO INVÁLIDO",
+            text: "Ingrese un correo válido.",
+            icon: "error"
+        });
+        return;
     }
-}
 
-Swal.fire({
-        title: "EXCELENTE, TU PEDIDO SALDRA PRONTO",
-        icon: "success",
-        draggable: true,
-        timer: undefined
+    Swal.fire({
+        title: "¡EXCELENTE!",
+        text: "Usuario registrado correctamente.",
+        icon: "success"
     });
+
 }
 
-document.getElementById("btguardar").onclick = validarDatos;
+document.getElementById("btguard").addEventListener("click", ValidarDatos);
